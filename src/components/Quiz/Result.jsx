@@ -2,10 +2,10 @@ import React from "react";
 import ResultItem from "./ResultItem";
 import './style.css';
 
-const Result = ({ resultList }) => {
+const Result = ({ answers, questions }) => {
 
-    const correctCount = resultList.filter((result) => (result.answer === result.correct)).length;
-    const percentageCount = Math.round((100 / resultList.length) * correctCount);
+    const correctCount = questions.filter((question,index) => (answers[index] === question.correctAnswer)).length;
+    const percentageCount = Math.round((100 / questions.length) * correctCount);
     
     return (
         <div className="evaluation">
@@ -15,11 +15,11 @@ const Result = ({ resultList }) => {
             <div className="evaluation__content">
 
                 <div className="results">
-                    {resultList.map((result,index) => <ResultItem result={result} key={index}/>)}
+                    {questions.map((question,index) => <ResultItem question={question} key={index} index={index} answers={answers}/>)}
 
 
                     <div className="results__count">
-                        Správně máš {correctCount} ze {resultList.length} otázek.
+                        Správně máš {correctCount} ze {questions.length} otázek.
                     </div>
 
                 </div>

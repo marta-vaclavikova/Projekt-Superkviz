@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Intro from './components/Intro';
-import Quiz from './components/Quiz';
-import QuizList from './components/QuizList';
+import Quiz from './components/Quiz/Quiz';
+import QuizList from './components/QuizList/QuizList';
 import Topscore from './components/Topscore';
 import './style.css';
 

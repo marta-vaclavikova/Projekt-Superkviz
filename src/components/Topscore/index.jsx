@@ -23,7 +23,7 @@ const Topscore = () => {
 
         <ul className="topscore__list">
             {scoreList &&
-            scoreList.map(score => <TopScoreItem scoreItem={score} />)}
+            scoreList.map(score => <TopScoreItem scoreItem={score} key={score.name}/>)}
         </ul>
 
     </div>
